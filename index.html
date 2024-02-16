@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>정보 검색</title>
+  <style>
+    #inputText {
+      width: 300px;
+      height: 20px;
+      resize: none; /* 사용자가 텍스트 영역의 크기를 조정하지 못하도록 설정 */
+    }
+  </style>
+</head>
+<body>
+  <h1>우리들의 정보</h1>
+  <textarea id="inputText" placeholder="이름을 입력하세요..." onkeypress="if(event.keyCode==13) {getInfo(); return false;};"></textarea><br>
+  <button onclick="getInfo()">정보 얻기</button><br>
+  <div id="info"></div>
+
+  <script>
+    function getInfo() {
+      const inputText = document.getElementById('inputText').value;
+      let infoText = '';
+      const currentTime = new Date(); // 현재 날짜와 시간을 가져옴
+      const currentHour = currentTime.getHours(); // 현재 시간에서 시간 부분만 가져옴
+
+      if (inputText === '이나현') 
+      {
+        if(9< currentHour && currentHour < 18)
+        {
+            infoText = '이나현은 지금 일 하는 중 입니다.';
+        }
+        else
+        {
+            infoText = '이나현은 지금 일을 안하는 중 입니다.';
+        }
+      } 
+      else if(inputText === '김유림')
+      {
+        if(9< currentHour && currentHour < 18)
+        {
+            infoText = '김유림은 지금 일 하는 중 입니다.';
+        }
+        else
+        {
+            infoText = '김유림은 지금 일을 안하는 중 입니다.';
+        }
+      }
+      else if(inputText === '정봉갑')
+      {
+        if(9< currentHour && currentHour < 18)
+        {
+            infoText = '정봉갑은 지금 일 하는 중 입니다.';
+        }
+        else
+        {
+            infoText = '정봉갑은 지금 일을 안하는 중 입니다.';
+        }
+      }
+      else if(inputText === '유한종')
+      {
+        if(9< currentHour && currentHour < 18)
+        {
+            infoText = '유한종은 지금 자는 중 입니다.';
+        }
+        else
+        {
+            infoText = '유한종은 지금도 자는 중 입니다.';
+        }
+      }
+      else if(inputText === '정상원')
+      {
+        if(9< currentHour && currentHour < 18)
+        {
+            infoText = '정상원은 지금 자는가?';
+        }
+        else
+        {
+            infoText = '정상원은 지금 안자나?';
+        }
+      }
+      else 
+      {
+        infoText = '누구인가? 머리속에 마구니가 가득하구나'
+      }
+
+      document.getElementById('info').innerText = infoText;
+    }
+  </script>
+</body>
+</html>
